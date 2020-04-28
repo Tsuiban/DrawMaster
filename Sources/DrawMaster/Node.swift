@@ -18,7 +18,7 @@ enum Position {
 protocol Node {
     var id: String? { get }
     var parent: Node? { get set }
-    var children: [Node] { get }
+    var children: [Node] { get set }
 
     subscript(_ index: Int) -> Node? { get }
     subscript(_ index: String) -> Node? { get }
