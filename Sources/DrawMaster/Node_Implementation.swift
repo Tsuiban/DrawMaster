@@ -24,6 +24,11 @@ extension Node {
             return nil
         }
     }
+
+    func addChild(child: Node) {
+        children.append(child)
+        child.parent = self
+    }
 }
 
 extension Bonspiel: Node {
@@ -52,6 +57,11 @@ extension Bonspiel: Node {
         get {
             return nil
         }
+
+        set
+        (_ value : Node) {
+        return
+    }
     }
 
     var children: [Node] {
@@ -66,16 +76,22 @@ extension Roster: Node {
         get {
             return bonspiel
         }
-    }
-    var children: [Node] {
-        get {
-            return teams
-        }
-    }
 
-    func find(_ id: String) -> Node? {
-        for team in teams {
-            if team.id == id {
+        set
+        (_ parent : Bonspiel) {
+        bonspiel = parent
+    }
+}
+
+var children: [Node] {
+    get {
+        return teams
+    }
+}
+
+func find(_ id: String) -> Node? {
+    for team in teams {
+        if team.id == id {
                 return team
             }
         }
@@ -100,6 +116,11 @@ extension Member: Node {
         get {
             return team
         }
+
+        set
+        (_ value : Team) {
+        self.team = value
+    }
     }
 
     func find(_ id: String) -> Node? {
@@ -112,6 +133,11 @@ extension Team: Node {
         get {
             return roster
         }
+
+        set
+        (_ parent : Roster) {
+        self.roster = parent
+    }
     }
     var children: [Node] {
         get {

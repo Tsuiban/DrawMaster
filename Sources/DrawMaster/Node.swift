@@ -4,15 +4,27 @@
 
 import Foundation
 
+enum Position {
+    case UndefinedPosition
+    case AnyPosition
+    case Skip
+    case Vice
+    case Second
+    case Lead
+    case Alternate
+    case Coach
+}
+
 protocol Node {
     var id: String? { get }
-    var parent: Node? { get }
+    var parent: Node? { get set }
     var children: [Node] { get }
 
     subscript(_ index: Int) -> Node? { get }
     subscript(_ index: String) -> Node? { get }
 
     func find(_ id: String) -> Node?
+    func addChild(child: Node)
 }
 
 struct Bonspiel {
@@ -31,17 +43,6 @@ struct Team {
     var name: String? = nil
     var roster: Roster? = nil
     var members: [Member] = []
-}
-
-enum Position {
-    case UndefinedPosition
-    case AnyPosition
-    case Skip
-    case Vice
-    case Second
-    case Lead
-    case Alternate
-    case Coach
 }
 
 struct Member {
