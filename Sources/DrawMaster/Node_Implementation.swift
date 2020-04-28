@@ -29,7 +29,7 @@ extension Node {
 extension Bonspiel: Node {
 
     init(name: String? = nil) {
-        self.name = name
+        self.id = name
     }
 
     func find(_ id: String) -> Node? {

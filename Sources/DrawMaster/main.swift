@@ -1,3 +1,3 @@
-let b = Bonspiel("Foo")
+let b = Bonspiel(name: "Foo")
 
 print("Bonspiel node created with id \(b.id!)")
