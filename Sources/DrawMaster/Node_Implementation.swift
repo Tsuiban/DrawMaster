@@ -90,6 +90,12 @@ extension Member: Node {
             return []
         }
     }
+
+    var parent: Node? {
+        get {
+            return team
+        }
+    }
 }
 
 extension Team: Node {
