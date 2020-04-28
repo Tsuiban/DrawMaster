@@ -96,6 +96,10 @@ extension Member: Node {
             return team
         }
     }
+
+    func fine(_ id: String) -> Node? {
+        return self.name == id
+    }
 }
 
 extension Team: Node {
