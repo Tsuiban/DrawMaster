@@ -67,6 +67,9 @@ extension Bonspiel: Node {
         get {
             return draws
         }
+        set (value) {
+            draws = value
+        }
     }
 }
 
