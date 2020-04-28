@@ -25,7 +25,7 @@ extension Node {
         }
     }
 
-    func addChild(child: Node) {
+    mutating func addChild(child: Node) {
         children.append(child)
         child.parent = self
     }
