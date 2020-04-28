@@ -98,7 +98,7 @@ extension Member: Node {
     }
 
     func find(_ id: String) -> Node? {
-        return self.name == id
+        return self.name == id ? self : nil
     }
 }
 
