@@ -78,6 +78,20 @@ extension Roster: Node {
     }
 }
 
+extension Member: Node {
+    var id: String? {
+        get {
+            return name
+        }
+    }
+
+    var children: [Node] {
+        get {
+            return []
+        }
+    }
+}
+
 extension Team: Node {
     var parent: Node? {
         get {
