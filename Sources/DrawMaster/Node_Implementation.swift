@@ -27,6 +27,11 @@ extension Node {
 }
 
 extension Bonspiel: Node {
+
+    init(name: String? = nil) {
+        self.name = name
+    }
+
     func find(_ id: String) -> Node? {
         for roster in rosters {
             if let found = roster.find(id) {
