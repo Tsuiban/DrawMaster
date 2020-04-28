@@ -90,6 +90,12 @@ extension Team: Node {
         }
     }
 
+    var id: String? {
+        get {
+            return name
+        }
+    }
+
     func find(_ in: String) -> Node? {
         for member in members {
             if member.id == id {
